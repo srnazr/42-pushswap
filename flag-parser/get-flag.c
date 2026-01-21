@@ -6,9 +6,11 @@
 /*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 22:34:04 by szaarour          #+#    #+#             */
-/*   Updated: 2026/01/21 11:21:04 by nmina            ###   ########.fr       */
+/*   Updated: 2026/01/21 11:42:07 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../push_swap.h"
 
 int	ft_strcmp(char *s1, char *s2)
 {

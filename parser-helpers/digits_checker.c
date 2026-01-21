@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   digits_checker.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: szaarour <szaarour@student.42beirut.com    +#+  +:+       +#+        */
+/*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 17:46:43 by szaarour          #+#    #+#             */
-/*   Updated: 2026/01/06 17:46:43 by szaarour         ###   ########.fr       */
+/*   Updated: 2026/01/21 11:42:21 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../push_swap.h"
 
 int	check_non_digit(char *s)
 {

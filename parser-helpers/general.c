@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   general.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: szaarour <szaarour@student.42beirut.com    +#+  +:+       +#+        */
+/*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 18:03:40 by szaarour          #+#    #+#             */
-/*   Updated: 2026/01/06 18:03:40 by szaarour         ###   ########.fr       */
+/*   Updated: 2026/01/21 11:42:44 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../push_swap.h"
 
 void	show_error(void)
 {

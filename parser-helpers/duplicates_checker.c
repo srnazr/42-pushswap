@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   duplicates_checker.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: szaarour <szaarour@student.42beirut.com    +#+  +:+       +#+        */
+/*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 17:52:57 by szaarour          #+#    #+#             */
-/*   Updated: 2026/01/06 17:52:57 by szaarour         ###   ########.fr       */
+/*   Updated: 2026/01/21 11:42:27 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../push_swap.h"
 
 //handle +01 1 01 as duplicates -> they are parsed in atoi
 int	check_duplicates_int(int *arr, int n)

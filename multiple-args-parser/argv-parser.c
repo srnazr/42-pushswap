@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   argv-parser.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: szaarour <szaarour@student.42beirut.com    +#+  +:+       +#+        */
+/*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 17:00:41 by szaarour          #+#    #+#             */
-/*   Updated: 2026/01/06 17:00:41 by szaarour         ###   ########.fr       */
+/*   Updated: 2026/01/21 11:42:14 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../push_swap.h"
 
 int	*parse_numbers(char **argv, int argc, int start)
 {

@@ -3,20 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: szaarour <szaarour@student.42beirut.com    +#+  +:+       +#+        */
+/*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 22:24:35 by szaarour          #+#    #+#             */
-/*   Updated: 2026/01/06 22:24:35 by szaarour         ###   ########.fr       */
+/*   Updated: 2026/01/21 11:42:55 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//PUT IN HEADER FILE LATER
-// typedef struct	t_stack
-// {
-// 	int	*arr;
-// 	int	size;
-// 	int	capacity;
-// }	t_stack;
+#include "../push_swap.h"
 
 void	sb(t_stack *stack_b)
 {

@@ -6,9 +6,11 @@
 /*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 22:58:59 by szaarour          #+#    #+#             */
-/*   Updated: 2026/01/21 11:19:37 by nmina            ###   ########.fr       */
+/*   Updated: 2026/01/21 11:43:01 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../push_swap.h"
 
 int	get_max(t_stack *stack)
 {

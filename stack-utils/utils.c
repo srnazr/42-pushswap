@@ -3,20 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: szaarour <szaarour@student.42beirut.com    +#+  +:+       +#+        */
+/*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 22:06:48 by szaarour          #+#    #+#             */
-/*   Updated: 2026/01/06 22:06:48 by szaarour         ###   ########.fr       */
+/*   Updated: 2026/01/21 11:43:20 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//PUT IN HEADER FILE LATER
-// typedef struct	t_stack
-// {
-// 	int	*arr;
-// 	int	size;
-// 	int	capacity;
-// }	t_stack;
+#include "../push_swap.h"
 
 void	free_stack(t_stack *stack)
 {
@@ -60,7 +54,7 @@ int	check_sort_order(t_stack *stack)
 	return (1);
 }
 
-int	get_top(stack t_stack *stack)
+int	get_top(t_stack *stack)
 {
 	if (!stack || stack->size <= 0)
 		return (0);
