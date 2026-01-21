@@ -6,7 +6,7 @@
 /*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 22:34:04 by szaarour          #+#    #+#             */
-/*   Updated: 2026/01/21 11:42:07 by nmina            ###   ########.fr       */
+/*   Updated: 2026/01/21 12:35:40 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,28 +28,68 @@ int	is_allowed_flag(char *s)
 {
 	if (!s)
 		return (0);
-	// nour flags here
+	else if (ft_strcmp(s, "--simple") == 0)
+		return (1);
+	else if (ft_strcmp(s, "--medium") == 0)
+		return (1);
 	else if (ft_strcmp(s, "--complex") == 0)
 		return (1);
 	else if (ft_strcmp(s, "--adaptive") == 0)
 		return (1);
+	else if (ft_strcmp(s, "--bench") == 0)
+		return (1);
 	return (0);
 }
 
-// returns index of first number - check maa nour if we are allowing 1 selector only???
+/*
+`--bench` is considered an allowed flag (via is_allowed_flag) 
+but **it is NOT counted** as a strategy. This allows us to combine 
+a strategy with `--bench` (e.g., `--simple --bench`) without triggering 
+an error.  
+
+The loop stops at the first argument that is neither a 
+strategy nor allowed flag, and the function returns its 
+index, indicating where the stack input begins.
+*/
 int	get_start(char **argv, int argc)
 {
 	int	i;
-	int	c;
+	int	strategy_count;
 
 	i = 1;
-	c = 0;
-	while (i < argc && is_allowed_flag(argv[i]))
+	strategy_count = 0;
+	while (i < argc)
 	{
-		c++;
+		if (ft_strcmp(argv[i], "--simple") == 0
+			|| ft_strcmp(argv[i], "--medium") == 0
+			|| ft_strcmp(argv[i], "--complex") == 0
+			|| ft_strcmp(argv[i], "--adaptive") == 0)
+			strategy_count++;
+		else if (!is_allowed_flag(argv[i]))
+			break ;
 		i++;
 	}
-	if (c > 1)
+	if (strategy_count > 1)
 		show_error();
 	return (i);
+}
+
+t_strategy	get_strategy(char **argv, int argc)
+{
+	int	i;
+
+	i = 1;
+	while (i < argc)
+	{
+		if (ft_strcmp(argv[i], "--simple") == 0)
+			return (SIMPLE);
+		else if (ft_strcmp(argv[i], "--medium") == 0)
+			return (MEDIUM);
+		else if (ft_strcmp(argv[i], "--complex") == 0)
+			return (COMPLEX);
+		else if (ft_strcmp(argv[i], "--adaptive") == 0)
+			return (ADAPTIVE);
+		i++;
+	}
+	return (ADAPTIVE);
 }
