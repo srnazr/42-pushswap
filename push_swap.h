@@ -6,7 +6,7 @@
 /*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 12:21:46 by nmina             #+#    #+#             */
-/*   Updated: 2026/01/21 12:22:20 by nmina            ###   ########.fr       */
+/*   Updated: 2026/01/21 16:32:04 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef enum e_strategy
 int		ft_strcmp(char *s1, char *s2);
 int		is_allowed_flag(char *s);
 int		get_start(char **argv, int argc);
+t_strategy	get_strategy(char **argv, int argc);
 
 int		*parse_numbers(char **argv, int argc, int start);
 
@@ -53,9 +54,9 @@ int		get_max(t_stack *stack);
 int		get_max_position(t_stack *stack);
 int		shortest_rotation_direction(t_stack *stack, int target_pos);
 
-void	sb(t_stack *stack_b);
-void	pb(t_stack *stack_a, t_stack *stack_b);
-void	rb(t_stack *stack_b);
-void	rrb(t_stack *stack_b);
+void	swap(t_stack *stack);
+void	push(t_stack *from, t_stack *to);
+void	rotate(t_stack *stack);
+void	reverse_rotate(t_stack *stack);
 
 #endif
