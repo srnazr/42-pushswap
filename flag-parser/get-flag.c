@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get-flag.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: szaarour <szaarour@student.42beirut.com    +#+  +:+       +#+        */
+/*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 22:34:04 by szaarour          #+#    #+#             */
-/*   Updated: 2026/01/06 22:34:04 by szaarour         ###   ########.fr       */
+/*   Updated: 2026/01/21 11:21:04 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int	is_allowed_flag(char *s)
 	if (!s)
 		return (0);
 	// nour flags here
-	if (ft_strcmp(s, "--complex") == 0)
+	else if (ft_strcmp(s, "--complex") == 0)
 		return (1);
-	if (ft_strcmp(s, "--adaptive") == 0)
+	else if (ft_strcmp(s, "--adaptive") == 0)
 		return (1);
 	return (0);
 }

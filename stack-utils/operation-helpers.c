@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operation-helpers.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: szaarour <szaarour@student.42beirut.com    +#+  +:+       +#+        */
+/*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 22:58:59 by szaarour          #+#    #+#             */
-/*   Updated: 2026/01/06 22:58:59 by szaarour         ###   ########.fr       */
+/*   Updated: 2026/01/21 11:19:37 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
