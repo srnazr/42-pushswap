@@ -6,7 +6,7 @@
 /*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 22:24:35 by szaarour          #+#    #+#             */
-/*   Updated: 2026/01/21 18:03:12 by nmina            ###   ########.fr       */
+/*   Updated: 2026/01/21 18:05:34 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,22 +79,4 @@ void	reverse_rotate(t_stack *stack)
 		i--;
 	}
 	stack->arr[0] = last;
-}
-
-void	double_swap(t_stack *a, t_stack *b)
-{
-	swap(a);
-	swap(b);
-}
-
-void	double_rotate(t_stack *a, t_stack *b)
-{
-	rotate(a);
-	rotate(b);
-}
-
-void	double_reverse_rotate(t_stack *a, t_stack *b)
-{
-	reverse_rotate(a);
-	reverse_rotate(b);
 }
