@@ -1,4 +1,15 @@
 /* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/21 12:21:46 by nmina             #+#    #+#             */
+/*   Updated: 2026/01/21 12:21:54 by nmina            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
@@ -13,6 +24,14 @@ typedef struct s_stack
 	int	size;
 	int	capacity;
 }	t_stack;
+
+typedef enum e_strategy
+{
+	SIMPLE,
+	MEDIUM,
+	COMPLEX,
+	ADAPTIVE
+}	t_strategy;
 
 int		ft_strcmp(char *s1, char *s2);
 int		is_allowed_flag(char *s);
