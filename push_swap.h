@@ -6,7 +6,7 @@
 /*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 12:21:46 by nmina             #+#    #+#             */
-/*   Updated: 2026/01/21 16:34:08 by nmina            ###   ########.fr       */
+/*   Updated: 2026/01/21 18:03:19 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,9 @@ void		swap(t_stack *stack);
 void		push(t_stack *from, t_stack *to);
 void		rotate(t_stack *stack);
 void		reverse_rotate(t_stack *stack);
+void		double_swap(t_stack *a, t_stack *b);
+void		double_rotate(t_stack *a, t_stack *b);
+void		double_reverse_rotate(t_stack *a, t_stack *b);
+
 
 #endif
