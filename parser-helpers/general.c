@@ -6,7 +6,7 @@
 /*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 18:03:40 by szaarour          #+#    #+#             */
-/*   Updated: 2026/01/21 11:42:44 by nmina            ###   ########.fr       */
+/*   Updated: 2026/01/21 16:19:18 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,7 @@ int	atoi_arg(char *str)
 		nb = nb * 10 + (str[i] - '0');
 		i++;
 	}
-	if (str[i] != '\0')
+	if (str[i] != '\0' || nb * sign > INT_MAX || nb * sign < INT_MIN)
 		show_error();
 	return ((int)(nb * sign));
 }
-
-// check returned number with int max/min (nour func)
