@@ -6,7 +6,7 @@
 /*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 22:24:35 by szaarour          #+#    #+#             */
-/*   Updated: 2026/01/21 16:26:32 by nmina            ###   ########.fr       */
+/*   Updated: 2026/01/21 18:00:25 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,4 +81,20 @@ void	reverse_rotate(t_stack *stack)
 	stack->arr[0] = last;
 }
 
-// add rr and rrr later when we merge
+void	ss(t_stack *a, t_stack *b)
+{
+	swap(a);
+	swap(b);
+}
+
+void	rr(t_stack *a, t_stack *b)
+{
+	rotate(a);
+	rotate(b);
+}
+
+void	rrr(t_stack *a, t_stack *b)
+{
+	reverse_rotate(a);
+	reverse_rotate(b);
+}
