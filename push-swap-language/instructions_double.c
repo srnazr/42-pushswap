@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations_double.c                                :+:      :+:    :+:   */
+/*   instructions_double.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/21 18:04:55 by nmina             #+#    #+#             */
-/*   Updated: 2026/01/21 18:21:34 by nmina            ###   ########.fr       */
+/*   Created: 2026/01/21 18:16:28 by nmina             #+#    #+#             */
+/*   Updated: 2026/01/21 18:21:51 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ss(t_stack *a, t_stack *b)
+void	rb(t_stack *b)
 {
-	swap(a);
-	swap(b);
-	write(1, "ss\n", 3);
-}
-
-void	rr(t_stack *a, t_stack *b)
-{
-	rotate(a);
 	rotate(b);
-	write(1, "rr\n", 3);
+	write(1, "rb\n", 3);
 }
 
-void	rrr(t_stack *a, t_stack *b)
+void	rra(t_stack *a)
 {
 	reverse_rotate(a);
+	write(1, "rra\n", 4);
+}
+
+void	rrb(t_stack *b)
+{
 	reverse_rotate(b);
-	write(1, "rrr\n", 4);
+	write(1, "rrb\n", 4);
 }
