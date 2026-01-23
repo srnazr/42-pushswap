@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-double compute_disorder(t_stack stack)
+#include "../push_swap.h"
+
+double	compute_disorder(t_stack stack)
 {
 	double	mistakes;
 	double	total_pairs;
