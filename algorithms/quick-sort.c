@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   quick-sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: szaarour <szaarour@student.42beirut.com    +#+  +:+       +#+        */
+/*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 11:33:53 by szaarour          #+#    #+#             */
-/*   Updated: 2026/01/23 11:33:53 by szaarour         ###   ########.fr       */
+/*   Updated: 2026/01/23 14:34:03 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	swap(int *a, int *b)
+void	swap_int(int *a, int *b)
 {
 	int	temp;
 
@@ -35,11 +35,11 @@ int	partition(int *arr, int low, int high)
 		if (arr[j] <= pivot)
 		{
 			i++;
-			swap(&arr[i], &arr[j]);
+			swap_int(&arr[i], &arr[j]);
 		}
 		j++;
 	}
-	swap(&arr[i + 1], &arr[high]);
+	swap_int(&arr[i + 1], &arr[high]);
 	return (i + 1);
 }
 

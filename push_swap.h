@@ -6,7 +6,7 @@
 /*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 12:21:46 by nmina             #+#    #+#             */
-/*   Updated: 2026/01/21 18:29:33 by nmina            ###   ########.fr       */
+/*   Updated: 2026/01/23 14:34:20 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,6 @@ void		rrr(t_stack *a, t_stack *b);
 
 double		compute_disorder(t_stack stack);
 void		quick_sort(int *arr, int low, int high);
+void		swap_int(int *a, int *b);
 
 #endif
