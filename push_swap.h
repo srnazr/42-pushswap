@@ -71,4 +71,7 @@ void		ss(t_stack *a, t_stack *b);
 void		rr(t_stack *a, t_stack *b);
 void		rrr(t_stack *a, t_stack *b);
 
+double		compute_disorder(t_stack stack);
+void		quick_sort(int *arr, int low, int high);
+
 #endif
