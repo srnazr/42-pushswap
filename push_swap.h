@@ -6,7 +6,7 @@
 /*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 12:21:46 by nmina             #+#    #+#             */
-/*   Updated: 2026/01/23 14:34:20 by nmina            ###   ########.fr       */
+/*   Updated: 2026/01/24 17:58:28 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,11 @@ void		rrr(t_stack *a, t_stack *b);
 double		compute_disorder(t_stack stack);
 void		quick_sort(int *arr, int low, int high);
 void		swap_int(int *a, int *b);
-
+int			get_pivot(t_stack *stack, int size); 
+void		sort_quick(t_stack **a, t_stack **b);
+void		insertion_sort(t_stack *a, t_stack *b);
+void		sort_insertion(t_stack **a, t_stack **b);
+int			find_insert_pos(t_stack *b, int value); 
+void		rotate_b_to_pos(t_stack *b, int pos);
+void		sort_adaptive(t_stack **a, t_stack **b);
 #endif

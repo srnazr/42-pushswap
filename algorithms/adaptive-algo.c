@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   adaptive-algo.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: szaarour <szaarour@student.42beirut.com    +#+  +:+       +#+        */
+/*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 19:48:02 by szaarour          #+#    #+#             */
-/*   Updated: 2026/01/22 19:48:02 by szaarour         ###   ########.fr       */
+/*   Updated: 2026/01/24 17:56:54 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,17 @@ double	compute_disorder(t_stack stack)
 		i++;
 	}
 	return (mistakes / total_pairs);
+}
+
+void	sort_adaptive(t_stack **a, t_stack **b)
+{
+	double	disorder;
+
+	disorder = compute_disorder(**a);
+	if (disorder < 0.2)
+		sort_insertion(a, b);
+	else if (disorder < 0.5)
+		sort_bucket(a, b);
+	else
+		sort_quick(a, b);
 }
