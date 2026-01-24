@@ -49,6 +49,7 @@ void		free_stack(t_stack *stack);
 void		stack_pop(t_stack *stack);
 int			check_sort_order(t_stack *stack);
 int			get_top(t_stack *stack);
+t_stack		copy_stack(t_stack *original);
 
 int			get_max(t_stack *stack);
 int			get_max_position(t_stack *stack);

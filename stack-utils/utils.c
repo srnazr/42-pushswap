@@ -60,3 +60,30 @@ int	get_top(t_stack *stack)
 		return (0);
 	return (stack->arr[0]);
 }
+
+t_stack	copy_stack(t_stack *original)
+{
+	t_stack	new_stack;
+	int		i;
+
+	new_stack.arr = NULL;
+	new_stack.size = 0;
+	new_stack.capacity = 0;
+	if (!original || original->size <= 0 || !original->arr)
+		return (new_stack);
+
+	new_stack.size = original->size;
+	new_stack.capacity = original->size;
+	new_stack.arr = (int *)malloc(sizeof(int) * new_stack.capacity);
+	if (!new_stack.arr)
+		return (new_stack);
+
+	i = 0;
+	while (i < original->size)
+	{
+		new_stack.arr[i] = original->arr[i];
+		i++;
+	}
+	return (new_stack);
+}
+
