@@ -3,84 +3,74 @@
 /*                                                        :::      ::::::::   */
 /*   bucket-sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: szaarour <szaarour@student.42beirut.com    +#+  +:+       +#+        */
+/*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 11:47:05 by szaarour          #+#    #+#             */
-/*   Updated: 2026/01/23 11:47:05 by szaarour         ###   ########.fr       */
+/*   Updated: 2026/01/25 17:49:12 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	push_buckets(t_stack *a, t_stack *b, int bucket_count)
+void	index_stack(t_stack *a)
 {
-	int	bucket_size;
-	int limit;
-	int	pushed;
+	int	*sorted;
 
-	bucket_size = a->size / bucket_count;
-	limit = bucket_size;
-	pushed = 0;
-	if (bucket_size == 0)
-		bucket_size = 1;
-	while (a->size > 0)
-	{
-		// this is where sorting using indexes is needed (to compare to the limit)
-		if (a->arr[0] < limit)
-		{
-			pb(a, b);
-			pushed++;
-			if (bucket_size > 1 && b->arr[0] < limit - (bucket_size / 2))
-				rb(b);
-		}
-		else
-			ra(a);
-		if (pushed == limit)
-			limit += bucket_size;
-	}
+	sorted = get_sorted_copy(a);
+	if (!sorted)
+		return ;
+	index_with_sorted(a, sorted);
+	free(sorted);
 }
 
-void	push_back(t_stack *a, t_stack *b)
+static void	push_buckets(t_stack *a, t_stack *b, int bucket_count, int *op_c)
 {
-	int	pos;
-	int	dir;
+	int	bucket_size;
+	int	limit;
+	int	total;
 
-	while (b->size > 0)
+	total = a->size;
+	bucket_size = total / bucket_count;
+	if (bucket_size == 0)
+		bucket_size = 1;
+	limit = bucket_size;
+	while (a->size > 0)
 	{
-		pos = get_max_position(b);
-		dir = shortest_rotation_direction(b, pos);
-		if (dir == 1)
-			while (pos > 0)
-			{
-				rb(b);
-				pos--;
-			}
+		if (a->arr[0] < limit)
+		{
+			pb(a, b, op_c);
+			if (b->size > 1 && b->arr[0] < limit - (bucket_size / 2))
+				rb(b, op_c);
+		}
 		else
-			while (pos < b->size)
-			{
-				rrb(b);
-				pos++;
-			}
-		pa(a, b);
+			ra(a, op_c);
+		if (b->size >= limit && limit < total)
+			limit += bucket_size;
 	}
 }
 
 static int	get_bucket_count(int size)
 {
 	if (size <= 10)
-		return (1);
+		return (2);
 	if (size <= 100)
 		return (5);
 	return (11);
 }
 
-void	bucket_sort(t_stack *a, t_stack *b)
+void	bucket_sort(t_stack *a, t_stack *b, int *op_count)
 {
 	int	bucket_count;
 
 	if (!a || a->size < 2)
 		return ;
+	index_stack(a);
 	bucket_count = get_bucket_count(a->size);
-	push_buckets(a, b, bucket_count);
-	push_back(a, b);
+	push_buckets(a, b, bucket_count, op_count);
+	push_back(a, b, op_count);
+}
+
+void	sort_bucket(t_stack **a, t_stack **b, int *op_count)
+{
+	bucket_sort(*a, *b, op_count);
 }
