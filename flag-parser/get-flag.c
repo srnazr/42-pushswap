@@ -6,51 +6,12 @@
 /*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 22:34:04 by szaarour          #+#    #+#             */
-/*   Updated: 2026/01/21 12:35:40 by nmina            ###   ########.fr       */
+/*   Updated: 2026/01/25 17:52:45 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ft_strcmp(char *s1, char *s2)
-{
-	int	i;
-
-	if (!s1 || !s2)
-		return (-1);
-	i = 0;
-	while (s1[i] && s2[i] && s1[i] == s2[i])
-		i++;
-	return (s1[i] - s2[i]);
-}
-
-int	is_allowed_flag(char *s)
-{
-	if (!s)
-		return (0);
-	else if (ft_strcmp(s, "--simple") == 0)
-		return (1);
-	else if (ft_strcmp(s, "--medium") == 0)
-		return (1);
-	else if (ft_strcmp(s, "--complex") == 0)
-		return (1);
-	else if (ft_strcmp(s, "--adaptive") == 0)
-		return (1);
-	else if (ft_strcmp(s, "--bench") == 0)
-		return (1);
-	return (0);
-}
-
-/*
-`--bench` is considered an allowed flag (via is_allowed_flag) 
-but **it is NOT counted** as a strategy. This allows us to combine 
-a strategy with `--bench` (e.g., `--simple --bench`) without triggering 
-an error.  
-
-The loop stops at the first argument that is neither a 
-strategy nor allowed flag, and the function returns its 
-index, indicating where the stack input begins.
-*/
 int	get_start(char **argv, int argc)
 {
 	int	i;
@@ -92,4 +53,47 @@ t_strategy	get_strategy(char **argv, int argc)
 		i++;
 	}
 	return (ADAPTIVE);
+}
+
+int	has_bench_flag(char **argv, int argc)
+{
+	int	i;
+
+	i = 1;
+	while (i < argc)
+	{
+		if (ft_strcmp(argv[i], "--bench") == 0)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+int	ft_strcmp(char *s1, char *s2)
+{
+	int	i;
+
+	if (!s1 || !s2)
+		return (-1);
+	i = 0;
+	while (s1[i] && s2[i] && s1[i] == s2[i])
+		i++;
+	return (s1[i] - s2[i]);
+}
+
+int	is_allowed_flag(char *s)
+{
+	if (!s)
+		return (0);
+	if (ft_strcmp(s, "--simple") == 0)
+		return (1);
+	if (ft_strcmp(s, "--medium") == 0)
+		return (1);
+	if (ft_strcmp(s, "--complex") == 0)
+		return (1);
+	if (ft_strcmp(s, "--adaptive") == 0)
+		return (1);
+	if (ft_strcmp(s, "--bench") == 0)
+		return (1);
+	return (0);
 }
