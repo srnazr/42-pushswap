@@ -6,7 +6,7 @@
 /*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 12:21:46 by nmina             #+#    #+#             */
-/*   Updated: 2026/01/24 17:58:28 by nmina            ###   ########.fr       */
+/*   Updated: 2026/01/24 17:59:20 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,5 @@ void		sort_insertion(t_stack **a, t_stack **b);
 int			find_insert_pos(t_stack *b, int value); 
 void		rotate_b_to_pos(t_stack *b, int pos);
 void		sort_adaptive(t_stack **a, t_stack **b);
+
 #endif

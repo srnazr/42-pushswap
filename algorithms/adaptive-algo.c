@@ -6,7 +6,7 @@
 /*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 19:48:02 by szaarour          #+#    #+#             */
-/*   Updated: 2026/01/24 17:56:54 by nmina            ###   ########.fr       */
+/*   Updated: 2026/01/25 17:36:52 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,15 @@ double	compute_disorder(t_stack stack)
 	return (mistakes / total_pairs);
 }
 
-void	sort_adaptive(t_stack **a, t_stack **b)
+void	sort_adaptive(t_stack **a, t_stack **b, int *op_count)
 {
 	double	disorder;
 
 	disorder = compute_disorder(**a);
 	if (disorder < 0.2)
-		sort_insertion(a, b);
+		sort_insertion(a, b, op_count);
 	else if (disorder < 0.5)
-		sort_bucket(a, b);
+		sort_bucket(a, b, op_count);
 	else
-		sort_quick(a, b);
+		sort_quick(a, b, op_count);
 }

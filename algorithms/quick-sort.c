@@ -6,20 +6,11 @@
 /*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 11:33:53 by szaarour          #+#    #+#             */
-/*   Updated: 2026/01/24 17:56:32 by nmina            ###   ########.fr       */
+/*   Updated: 2026/01/25 17:40:18 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-void	swap_int(int *a, int *b)
-{
-	int	temp;
-
-	temp = *a;
-	*a = *b;
-	*b = temp;
-}
 
 int	partition(int *arr, int low, int high)
 {
@@ -76,27 +67,40 @@ int	get_pivot(t_stack *stack, int size)
 	return (pivot);
 }
 
-void	sort_quick(t_stack **a, t_stack **b)
+void	radix_index_stack(t_stack *a)
+{
+	int	*sorted;
+
+	sorted = get_sorted_copy(a);
+	if (!sorted)
+		return ;
+	index_with_sorted(a, sorted);
+	free(sorted);
+}
+
+void	sort_quick(t_stack **a, t_stack **b, int *op_count)
 {
 	int	size;
-	int	pivot;
+	int	max_bits;
 	int	i;
+	int	j;
 
 	size = (*a)->size;
-	if (size <= 3)
-		return (sort_insertion(a, b));
-	pivot = get_pivot(*a, size);
+	radix_index_stack(*a);
+	max_bits = get_max_bits(size - 1);
 	i = 0;
-	while (i++ < size)
+	while (i < max_bits)
 	{
-		if ((*a)->arr[0] < pivot)
-			pb(a, b);
-		else
-			ra(a);
+		j = size;
+		while (j-- > 0)
+		{
+			if ((((*a)->arr[0] >> i) & 1) == 0)
+				pb(*a, *b, op_count);
+			else
+				ra(*a, op_count);
+		}
+		while ((*b)->size > 0)
+			pa(*a, *b, op_count);
+		i++;
 	}
-	sort_quick(a, b);
-	if ((*b)->size)
-		sort_quick(b, a);
-	while ((*b)->size)
-		pa(a, b);
 }
