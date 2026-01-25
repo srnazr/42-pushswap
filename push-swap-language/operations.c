@@ -6,19 +6,12 @@
 /*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 22:24:35 by szaarour          #+#    #+#             */
-/*   Updated: 2026/01/21 18:05:34 by nmina            ###   ########.fr       */
+/*   Updated: 2026/01/25 17:41:08 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-/*
-	Stack operations updated to be generic:
-	Previously we had sa, sb, etc. for each stack.
-	Now the same functions work for any stack by passing it
-	as an argument. This avoids duplicate code and makes
-	the operations reusable for both stack_a and stack_b.
- */
 void	swap(t_stack *stack)
 {
 	int	temp;
