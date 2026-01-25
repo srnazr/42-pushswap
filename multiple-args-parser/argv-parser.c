@@ -6,40 +6,68 @@
 /*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 17:00:41 by szaarour          #+#    #+#             */
-/*   Updated: 2026/01/21 12:36:26 by nmina            ###   ########.fr       */
+/*   Updated: 2026/01/25 17:51:51 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-/*
-- Convert command-line arguments into an int array for the initial stack.
-- Start reading from 'start', skipping strategy or flag arguments.
-- Validate all arguments with check_all_args() to ensure numeric values.
-- Allocate memory for the array and convert each string to int via atoi_arg().
-- Check for duplicates with check_duplicates_int(). Call show_error() on failure.
-*/
 int	*parse_numbers(char **argv, int argc, int start)
 {
-	int	i;
-	int	n;
-	int	*arr;
+	int		n;
+	int		*arr;
+	char	*joined;
+	char	**split;
 
-	if (!argv || start >= argc)
-		show_error();
-	check_all_args(argv, argc, start);
-	n = argc - start;
-	if (n <= 0)
-		show_error();
-	arr = (int *)malloc(sizeof(int) * n);
-	if (!arr)
-		show_error();
-	i = 0;
-	while (i < n)
+	joined = join_arguments(argv, argc, start);
+	split = ft_split(joined, ' ');
+	free(joined);
+	if (!split || !split[0])
 	{
-		arr[i] = atoi_arg(argv[start + i]);
-		i++;
+		free_split(split);
+		show_error();
 	}
+	n = validate_and_count(split);
+	arr = fill_array(split, n);
+	free_split(split);
 	check_duplicates_int(arr, n);
 	return (arr);
+}
+
+static char	*join_args_loop(char **argv, int argc, int start)
+{
+	char	*joined;
+	int		i;
+
+	joined = NULL;
+	i = start;
+	while (i < argc)
+	{
+		if (joined == NULL)
+			joined = ft_strjoin_space(NULL, argv[i]);
+		else
+			joined = ft_strjoin_space(joined, argv[i]);
+		i++;
+	}
+	return (joined);
+}
+
+int	count_numbers(char **argv, int argc, int start)
+{
+	char	*joined;
+	char	**split;
+	int		n;
+
+	joined = join_args_loop(argv, argc, start);
+	if (!joined)
+		return (0);
+	split = ft_split(joined, ' ');
+	free(joined);
+	if (!split)
+		return (0);
+	n = 0;
+	while (split[n])
+		n++;
+	free_split(split);
+	return (n);
 }
