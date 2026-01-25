@@ -6,13 +6,13 @@
 /*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 12:00:00 by szaarour          #+#    #+#             */
-/*   Updated: 2026/01/25 18:05:01 by nmina            ###   ########.fr       */
+/*   Updated: 2026/01/25 19:35:45 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static int	count_words_split(const char *s, char c)
+static int	count_words_split(const char *s)
 {
 	int	count;
 	int	i;
@@ -21,11 +21,11 @@ static int	count_words_split(const char *s, char c)
 	i = 0;
 	while (s[i])
 	{
-		while (s[i] && s[i] == c)
+		while (s[i] && ft_isspace(s[i]))
 			i++;
 		if (s[i])
 			count++;
-		while (s[i] && s[i] != c)
+		while (s[i] && !ft_isspace(s[i]))
 			i++;
 	}
 	return (count);
@@ -59,7 +59,7 @@ static void	free_all_split(char **arr, int words_count)
 	free(arr);
 }
 
-static int	fill_words(char **arr, const char *s, char c)
+static int	fill_words(char **arr, const char *s)
 {
 	int	i;
 	int	start;
@@ -69,12 +69,12 @@ static int	fill_words(char **arr, const char *s, char c)
 	count = 0;
 	while (s[i])
 	{
-		while (s[i] && s[i] == c)
+		while (s[i] && ft_isspace(s[i]))
 			i++;
-		if (s[i] && s[i] != c)
+		if (s[i] && !ft_isspace(s[i]))
 		{
 			start = i;
-			while (s[i] && s[i] != c)
+			while (s[i] && !ft_isspace(s[i]))
 				i++;
 			arr[count] = get_word_split(s, start, i);
 			if (!arr[count])
@@ -91,13 +91,14 @@ char	**ft_split(char *str, char c)
 	char	**arr;
 	int		words_count;
 
+	(void)c;
 	if (!str)
 		return (NULL);
-	words_count = count_words_split(str, c);
+	words_count = count_words_split(str);
 	arr = (char **)malloc((words_count + 1) * sizeof(char *));
 	if (!arr)
 		return (NULL);
-	if (fill_words(arr, str, c) == -1)
+	if (fill_words(arr, str) == -1)
 	{
 		free_all_split(arr, words_count);
 		return (NULL);

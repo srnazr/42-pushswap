@@ -6,7 +6,7 @@
 /*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 12:21:46 by nmina             #+#    #+#             */
-/*   Updated: 2026/01/25 17:53:48 by nmina            ###   ########.fr       */
+/*   Updated: 2026/01/25 19:37:35 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,5 +108,6 @@ int			get_pivot(t_stack *stack, int size);
 void		radix_index_stack(t_stack *a);
 void		print_bench(int *op_count, t_strategy strat, double disorder);
 void		put_nbr_fd(int n, int fd);
+int			ft_isspace(char c);
 
 #endif
