@@ -6,7 +6,7 @@
 /*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 17:00:41 by szaarour          #+#    #+#             */
-/*   Updated: 2026/01/25 17:51:51 by nmina            ###   ########.fr       */
+/*   Updated: 2026/01/25 18:01:38 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,23 @@ int	count_numbers(char **argv, int argc, int start)
 		n++;
 	free_split(split);
 	return (n);
+}
+
+t_cmd	parse_arguments(int argc, char **argv)
+{
+	t_cmd	cmd;
+	int		start;
+
+	if (argc < 2)
+		return ((t_cmd){NULL, 0, ADAPTIVE, 0});
+	start = get_start(argv, argc);
+	if (start >= argc)
+		return ((t_cmd){NULL, 0, ADAPTIVE, 0});
+	cmd.n = count_numbers(argv, argc, start);
+	if (cmd.n <= 0)
+		return ((t_cmd){NULL, 0, ADAPTIVE, 0});
+	cmd.arr = parse_numbers(argv, argc, start);
+	cmd.strat = get_strategy(argv, argc);
+	cmd.bench = has_bench_flag(argv, argc);
+	return (cmd);
 }
