@@ -180,29 +180,23 @@ All code was written, tested, and reviewed manually by both contributors.
 ## Contributors
 
 ### nmina
-- Designed and implemented input parsing and validation logic  
+- Designed validation logic 
 - Handled error management for invalid input, duplicates, and overflows
-- Developed stack operation helpers and low-level manipulation functions      
+- Developed stack operation helpers
+- Implemented adaptive algorithm selection      
 
 ### szaarour
+- Developed input parsing 
 - Implemented radix sort logic for large input sizes  
-- Implemented the bucket sort strategy and adaptive algorithm selection  
+- Implemented the bucket sort strategy
 - Built benchmarking utilities to measure operation counts and performance   
 
 Both contributors actively participated in debugging, extensive testing across edge cases, performance optimization, and project documentation.
 
 ---
 
-## Conclusion
-
-The **push_swap** project explores algorithmic optimization under strict operational constraints, requiring careful trade-offs between correctness, efficiency, and simplicity. By combining multiple sorting strategies with a disorder-based adaptive selector, the program dynamically chooses the most suitable approach for a given input size and distribution.
-
-This design enables strong performance across small and large datasets, ensures scalability, and maintains a clean, modular codebase. All implementations strictly follow the project specifications, emphasizing robustness, clarity, and optimized operation counts while handling edge cases and errors reliably.
-
----
-
 **Authors:** Serena Zaarour, Nour Mina <br>
-**Intra:** szaarour, nmina
+**Intra:** szaarour, nmina <br>
 **Cohort:** 1.1  
 **42 Campus:** Beirut  
 **Milestone:** 1  
