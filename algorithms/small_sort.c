@@ -6,17 +6,11 @@
 /*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 12:00:00 by szaarour          #+#    #+#             */
-/*   Updated: 2026/01/25 17:55:37 by nmina            ###   ########.fr       */
+/*   Updated: 2026/01/25 18:10:29 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-void	sort_two(t_stack *a, int *op_count)
-{
-	if (a->arr[0] > a->arr[1])
-		sa(a, op_count);
-}
 
 static void	sort_three_case(t_stack *a, int case_num, int *op_count)
 {
