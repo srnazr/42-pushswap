@@ -6,7 +6,7 @@
 /*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 22:58:59 by szaarour          #+#    #+#             */
-/*   Updated: 2026/01/21 11:43:01 by nmina            ###   ########.fr       */
+/*   Updated: 2026/01/25 17:51:03 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,29 @@ int	get_max_position(t_stack *stack)
 		if (stack->arr[i] > max)
 		{
 			max = stack->arr[i];
+			pos = i;
+		}
+		i++;
+	}
+	return (pos);
+}
+
+int	get_min_position(t_stack *a)
+{
+	int	min;
+	int	pos;
+	int	i;
+
+	if (!a || a->size == 0)
+		return (0);
+	min = a->arr[0];
+	pos = 0;
+	i = 1;
+	while (i < a->size)
+	{
+		if (a->arr[i] < min)
+		{
+			min = a->arr[i];
 			pos = i;
 		}
 		i++;

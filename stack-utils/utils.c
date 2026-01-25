@@ -6,7 +6,7 @@
 /*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 22:06:48 by szaarour          #+#    #+#             */
-/*   Updated: 2026/01/21 11:43:20 by nmina            ###   ########.fr       */
+/*   Updated: 2026/01/25 17:51:18 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,13 +71,11 @@ t_stack	copy_stack(t_stack *original)
 	new_stack.capacity = 0;
 	if (!original || original->size <= 0 || !original->arr)
 		return (new_stack);
-
 	new_stack.size = original->size;
 	new_stack.capacity = original->size;
 	new_stack.arr = (int *)malloc(sizeof(int) * new_stack.capacity);
 	if (!new_stack.arr)
 		return (new_stack);
-
 	i = 0;
 	while (i < original->size)
 	{
@@ -86,4 +84,3 @@ t_stack	copy_stack(t_stack *original)
 	}
 	return (new_stack);
 }
-
