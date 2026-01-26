@@ -6,7 +6,7 @@
 /*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 12:21:46 by nmina             #+#    #+#             */
-/*   Updated: 2026/01/25 19:37:35 by nmina            ###   ########.fr       */
+/*   Updated: 2026/01/26 10:58:02 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,8 +92,6 @@ int			*get_sorted_copy(const t_stack *a);
 void		index_with_sorted(t_stack *a, const int *sorted);
 void		swap_int(int *a, int *b);
 void		index_stack(t_stack *a);
-int			find_insert_pos(t_stack *b, int value);
-void		rotate_b_to_pos(t_stack *b, int pos, int *op_count);
 void		sort_insertion(t_stack **a, t_stack **b, int *op_count);
 void		sort_bucket(t_stack **a, t_stack **b, int *op_count);
 void		sort_quick(t_stack **a, t_stack **b, int *op_count);
