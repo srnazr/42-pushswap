@@ -6,7 +6,7 @@
 /*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 11:33:53 by szaarour          #+#    #+#             */
-/*   Updated: 2026/01/25 17:40:18 by nmina            ###   ########.fr       */
+/*   Updated: 2026/01/26 11:27:02 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,27 +44,6 @@ void	quick_sort(int *arr, int low, int high)
 		quick_sort(arr, low, p - 1);
 		quick_sort(arr, p + 1, high);
 	}
-}
-
-int	get_pivot(t_stack *stack, int size)
-{
-	int	*arr;
-	int	i;
-	int	pivot;
-
-	arr = malloc(sizeof(int) * size);
-	if (!arr)
-		return (0);
-	i = 0;
-	while (i < size)
-	{
-		arr[i] = stack->arr[i];
-		i++;
-	}
-	quick_sort(arr, 0, size - 1);
-	pivot = arr[size / 2];
-	free(arr);
-	return (pivot);
 }
 
 void	radix_index_stack(t_stack *a)

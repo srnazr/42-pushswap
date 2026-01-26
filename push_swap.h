@@ -6,7 +6,7 @@
 /*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 12:21:46 by nmina             #+#    #+#             */
-/*   Updated: 2026/01/26 10:58:02 by nmina            ###   ########.fr       */
+/*   Updated: 2026/01/26 11:27:24 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,6 @@ void		sort_three(t_stack *a, int *op_count);
 void		sort_small(t_stack *a, t_stack *b, int *op_count);
 int			partition(int *arr, int low, int high);
 void		quick_sort(int *arr, int low, int high);
-int			get_pivot(t_stack *stack, int size);
 void		radix_index_stack(t_stack *a);
 void		print_bench(int *op_count, t_strategy strat, double disorder);
 void		put_nbr_fd(int n, int fd);
