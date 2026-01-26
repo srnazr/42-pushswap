@@ -6,7 +6,7 @@
 /*   By: nmina <nmina@student.42beirut.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 14:46:09 by nmina             #+#    #+#             */
-/*   Updated: 2026/01/25 17:37:43 by nmina            ###   ########.fr       */
+/*   Updated: 2026/01/26 10:57:30 by nmina            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,35 +33,6 @@ static void	rotate_min_to_top(t_stack *a, int pos, int *op_count)
 			rra(a, op_count);
 			pos--;
 		}
-	}
-}
-
-int	find_insert_pos(t_stack *b, int value)
-{
-	int	i;
-
-	i = 0;
-	while (i < b->size)
-	{
-		if (b->arr[i] < value)
-			return (i);
-		i++;
-	}
-	return (b->size);
-}
-
-void	rotate_b_to_pos(t_stack *b, int pos, int *op_count)
-{
-	if (pos <= b->size / 2)
-	{
-		while (pos-- > 0)
-			rb(b, op_count);
-	}
-	else
-	{
-		pos = b->size - pos;
-		while (pos-- > 0)
-			rrb(b, op_count);
 	}
 }
 
